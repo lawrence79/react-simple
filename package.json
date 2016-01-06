@@ -1,21 +1,19 @@
 {
   "name": "react-webpack",
   "version": "1.0.0",
-  "description": "simple react setup",
-  "main": "index.js",
+  "description": "simple setup with webpack, babel and react",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack -d --watch",
+    "build" : "webpack -p"
   },
-  "author": "",
+  "author": "Lawrence Norton",
   "license": "MIT",
   "dependencies": {
-    "react": "^0.14.5",
-    "react-dom": "^0.14.5"
-  },
-  "devDependencies": {
-    "babel-core": "^6.3.26",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13"
+    "babel-preset-react": "^6.3.13",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5"
   }
 }
