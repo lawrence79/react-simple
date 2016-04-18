@@ -17,8 +17,8 @@ const config = {
     // latter form given it's convenient with more complex configurations.
     entry: {
         app: [
-          'webpack-hot-middleware/client',
-          'webpack/hot/dev-server',
+          'webpack-hot-middleware/client?http://localhost:3000',
+          'webpack/hot/only-dev-server',
           PATHS.app
           ]
     },
