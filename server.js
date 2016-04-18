@@ -1,23 +1,34 @@
-var path = require('path');
-var express = require('express');
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var config = require('./webpack.config.dev');
+/* eslint no-console: 0 */
 
-var port = 3000;
-var app = express();
-var compiler = webpack(config);
+const path = require('path');
+const express = require('express');
+const webpack = require('webpack');
+const webpackMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const config = require('./webpack.config.dev');
 
-app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
+const port = 3000;
+const app = express();
+const compiler = webpack(config);
+
+app.use(webpackMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    contentBase: 'src',
+    stats: {
+      colors: true,
+      hash: false,
+      timings: true,
+      chunks: false,
+      chunkModules: false,
+      modules: false
+    }
 }));
 
 app.use(webpackHotMiddleware(compiler));
 
 
 app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname + '/dist', 'index.html'));
 });
 
 app.listen(port, function onAppListening(err) {
