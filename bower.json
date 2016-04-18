@@ -1,0 +1,22 @@
+{
+  "name": "webpack-demo",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Lawrence Norton - AKQA"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lawrence79/react-simple",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dist/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6"
+  }
+}
